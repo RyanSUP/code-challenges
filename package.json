@@ -18,9 +18,7 @@
   },
   "homepage": "https://github.com/RyanSUP/code-challenges#readme",
   "devDependencies": {
+    "@types/jest": "^27.4.1",
     "jest": "^27.5.1"
-  },
-  "dependencies": {
-    "@types/jest": "^27.4.1"
   }
 }
