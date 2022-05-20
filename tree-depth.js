@@ -5,7 +5,6 @@ function nodeDepths(root) {
   let sum = 0
   // base case:
   // Left and right node are both null
-  // Add depth to sum
 
   // Actions:
   // recursive left passing current sum
