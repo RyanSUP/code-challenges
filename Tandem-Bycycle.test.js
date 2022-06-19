@@ -1,21 +1,6 @@
 function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
 
-    redShirtSpeeds.sort((a,b) => a - b)
-    blueShirtSpeeds.sort((a,b) => a - b)
 
-    let totalSpeed = 0
-
-    if(!fastest) redShirtSpeeds.reverse()
-
-    for(let i = 0; i < redShirtSpeeds.length; i++) {
-        if(fastest) {
-            totalSpeed += Math.max(redShirtSpeeds[i], blueShirtSpeeds[i])
-        } else {
-            totalSpeed += Math.min(redShirtSpeeds[i], blueShirtSpeeds[i]) 
-        }
-    }
-
-    return totalSpeed;
 }
   
 describe('Tandem-Bycycle', ()=> {
@@ -33,10 +18,10 @@ describe('Tandem-Bycycle', ()=> {
         expect(tandemBicycle(simpleRed, simpleBlue, true)).toBe(2)
     })
     // max
-    it('should return 1', ()=> {
+    it('should return 2', ()=> {
         let simpleRed = [2]
         let simpleBlue = [1]
-        expect(tandemBicycle(simpleRed, simpleBlue, false)).toBe(1)
+        expect(tandemBicycle(simpleRed, simpleBlue, false)).toBe(2)
     })
     
     it('should return 9', ()=> {
