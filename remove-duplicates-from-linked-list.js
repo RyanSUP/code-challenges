@@ -27,12 +27,8 @@ function removeDuplicatesFromLinkedList(linkedList) {
 
     while(currentNode) {
         let nextNode = currentNode.next
-        if(nextNode) {
-            if(currentNode.value === nextNode.value) {
-                currentNode.next = nextNode.next
-            } else {
-                currentNode = nextNode
-            }
+        if(nextNode && currentNode.value === nextNode.value) {
+            currentNode.next = nextNode.next
         } else {
             currentNode = nextNode
         }
