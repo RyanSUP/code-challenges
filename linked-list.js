@@ -31,7 +31,31 @@ const printValuesFromList = (head) => {
     }
 }
 
+// Returns head of new node
+const removeFirstValueNodeFromList = (head, value) => {
+    if(head === null) {
+        console.log('Empty list')
+    }
 
-const vals = [1,2,3,4,5,6,7,8,9,10]
-const numberList = createListFromValueArray(vals)
+    if(head.value === value) {
+        head = head.next
+        console.log(head)
+        return head
+    }
+
+    let currentNode = head
+    while(currentNode) {
+        if(currentNode.next && currentNode.next.value === value) {
+            currentNode.next = currentNode.next.next
+            return head
+        }
+        currentNode = currentNode.next
+    }
+}
+
+
+let vals = [1,2,3,4,5,6,7,8,9,10]
+let numberList = createListFromValueArray(vals)
+printValuesFromList(numberList)
+numberList = removeFirstValueNodeFromList(numberList, 1)
 printValuesFromList(numberList)
