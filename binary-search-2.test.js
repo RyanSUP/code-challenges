@@ -2,17 +2,13 @@ function binarySearch(array, target) {
     // Write your code here.
     let left = 0
     let right = array.length - 1
-    while(true) {
+    while(left <= right) {
         // Middle is target
         // Target is less than middle
         // Target is greater than middle
         let middle = Math.trunc((right + left) / 2)
         if(array[middle] === target) {
             return middle
-        }
-
-        if(left === right) {
-            return - 1
         }
 
         if(target < array[middle]) {
@@ -22,6 +18,7 @@ function binarySearch(array, target) {
         }
 
     }
+    return -1
 
 }
 // 0 1 2 3 4
