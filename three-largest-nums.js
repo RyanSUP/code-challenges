@@ -38,5 +38,51 @@ function findThreeLargestNumbers(array) {
     return valueArray.sort((a,b) => a - b)
 }
 
+// let test = [2,1,3,-4]
+// console.log(findThreeLargestNumbers(test))
+
+
+// Redo
+const getThreeLargest = (array) => {
+
+    // What do I know?
+    // I need to end up with an array of 3 sorted values
+    // That means [0] < [1] < [2]
+
+    let largestNums = [
+        null,
+        null,
+        null,
+    ]
+
+    for(let element of array) {
+        updateLargest(largestNums, element)
+    }
+
+    function updateLargest(largestNums, element) {
+        if(largestNums[2] === null || largestNums[2] < element) {
+            shiftAndUpdate(largestNums, element, 2)
+        } 
+        else if(largestNums[1] === null || largestNums[1] < element) {
+            shiftAndUpdate(largestNums, element, 1)
+        }
+        else if(largestNums[0] === null || largestNums[0] < element) {
+            shiftAndUpdate(largestNums, element, 0)
+        }
+    }
+
+    function shiftAndUpdate(largestNums, element, index) {
+        for(let i = 0; i < index + 1; i++) {
+            if(i === index) {
+                largestNums[i] = element
+            } else {
+                largestNums[i] = largestNums[i + 1]
+            }
+        }
+    }
+
+    return largestNums
+
+}
 let test = [2,1,3,-4]
-console.log(findThreeLargestNumbers(test))
+console.log(getThreeLargest(test))
