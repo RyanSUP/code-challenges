@@ -35,6 +35,12 @@ const bubbleSort = (array) => {
     return array
 }
 
+const insertionSort = (array) => {
+    // Iterate over array
+    // if array[i] < array[i + 1] then swap
+        // while swapped value is smaller than previous value, swap
+}
+
 describe('Searching algo tests', ()=> {
     
     // binary search
